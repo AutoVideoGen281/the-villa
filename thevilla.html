@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Villa Venue — Luxury vintage venue for weddings & events in Dbayeh</title>
+<meta name="description" content="The Villa Venue — a luxury scenery and authentic vintage venue in Dbayeh, Lebanon. An ideal indoor setting and picturesque garden for weddings, corporate and social events. Open 24/7." />
+
+<!--
+  ───────────────────────────────────────────────────────────────────
+  SWAP IN YOUR REAL PHOTOS
+  Every image is an <img> inside a .shot / .svc frame with a FIXED ratio.
+  Placeholder photos below are temporary. Replace each src="" with the
+  real Villa photos when ready — keep the ratios.
+  ───────────────────────────────────────────────────────────────────
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    /* ——— The Villa palette: monochrome vintage luxury (ivory · black · antique gold) ——— */
+    --ivory:#F5F2EC;
+    --ivory-2:#EDE8DF;
+    --paper:#FFFFFF;
+    --ink:#1A1613;        /* near-black, warm */
+    --ink-2:#0F0C0A;
+    --char:#3A342E;       /* warm charcoal */
+    --muted:#7C746B;      /* muted warm grey */
+    --gold:#9C7A4D;       /* antique champagne — the one restrained accent */
+    --gold-2:#B89468;
+    --line:rgba(26,22,19,.16);
+    --line-soft:rgba(26,22,19,.08);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ivory);
+    color:var(--char);
+    font-family:"Jost",system-ui,sans-serif;
+    font-size:16px;line-height:1.7;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    padding-bottom:64px; /* room for mobile call bar */
+  }
+  body::before{ /* grain */
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--ink);color:var(--ivory)}
+
+  h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;color:var(--ink);line-height:1.04;letter-spacing:.005em}
+  .italic{font-style:italic;color:var(--gold);font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.66rem;letter-spacing:.36em;text-transform:uppercase;font-weight:500;color:var(--gold);display:inline-flex;align-items:center;gap:11px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+  .num{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:1rem}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+  section{padding:66px 0}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;border:none;
+    font-family:"Jost";font-weight:500;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;padding:15px 26px;border-radius:0;
+    transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s}
+  .btn svg{width:16px;height:16px}
+  .btn-ink{background:var(--ink);color:var(--ivory)}
+  .btn-ink:hover{background:var(--gold)}
+  .btn-ink:active{transform:translateY(1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+
+  /* image frame + graceful placeholder */
+  .shot{position:relative;overflow:hidden;border-radius:2px;background:linear-gradient(135deg,#2a2520,#15110d)}
+  .shot::after{content:attr(data-cap);position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:12px;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,236,.45)}
+  .shot img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1);filter:grayscale(.18) contrast(1.02)}
+
+  /* thin decorative frame accent */
+  .framed{position:relative}
+  .framed::before{content:"";position:absolute;inset:10px;border:1px solid rgba(245,242,236,.35);z-index:5;pointer-events:none}
+
+  /* ---------------- NAV ---------------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
+    padding:18px 22px;transition:background .35s,padding .35s,box-shadow .35s,border-color .35s;border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(245,242,236,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-soft);padding:12px 22px}
+  .brand{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--ink);letter-spacing:.04em;font-weight:600;display:inline-flex;align-items:baseline;gap:7px}
+  .brand i{font-style:italic;font-size:1.05rem;color:var(--gold);font-weight:500}
+  .navlinks{display:none}
+  .burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:1100}
+  .burger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform .3s,opacity .3s}
+  body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  body.menu-open .burger span:nth-child(2){opacity:0}
+  body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  /* mobile menu overlay */
+  .menu{position:fixed;inset:0;z-index:1050;background:var(--ivory);display:flex;flex-direction:column;justify-content:center;
+    padding:40px 28px;gap:6px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+  body.menu-open .menu{transform:none;visibility:visible}
+  .menu a.mlink{font-family:"Cormorant Garamond",serif;font-size:2.4rem;color:var(--ink);font-weight:400;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+  .menu a.mlink .italic{font-size:.85rem;font-family:"Jost";font-style:normal;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-left:8px}
+  .menu .menu-foot{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .menu .btn-ink{width:100%}
+  .menu .menu-meta{font-size:.8rem;color:var(--muted);letter-spacing:.05em}
+
+  /* ---------------- HERO ---------------- */
+  header{padding:108px 0 30px}
+  .hero .eyebrow{margin-bottom:10px}
+  .hero h1{font-size:clamp(2.9rem,13vw,6rem);font-weight:500;margin:14px 0 20px}
+  .hero p.lead{font-size:1.06rem;color:var(--char);max-width:46ch}
+  .hero-actions{display:flex;flex-direction:column;gap:11px;margin:28px 0 32px}
+  .hero-actions .btn{width:100%}
+  .hero-stats{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;margin-bottom:34px}
+  .hero-stats .st b{font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:var(--ink);font-weight:600;display:block}
+  .hero-stats .st b .u{color:var(--gold)}
+  .hero-stats .st span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .hero-media{position:relative}
+  .hero-media .shot{aspect-ratio:4/5}
+  .hero-card{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(245,242,236,.96);
+    border:1px solid var(--line);padding:14px 17px;border-radius:2px;z-index:6;box-shadow:0 18px 40px -28px rgba(0,0,0,.7)}
+  .hero-card .stars{color:var(--gold);font-size:.82rem;letter-spacing:3px}
+  .hero-card small{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1rem;color:var(--ink);margin-top:5px;line-height:1.4}
+
+  /* ---------------- STATEMENT ---------------- */
+  .statement h2{font-size:clamp(2rem,7vw,3rem);font-weight:500;line-height:1.12}
+  .statement p{margin-top:20px;color:var(--char);max-width:52ch}
+  .state-media{margin-top:30px}
+  .state-media .shot{aspect-ratio:4/5}
+
+  /* ---------------- MARQUEE ---------------- */
+  .marquee{background:var(--ink);color:var(--ivory);padding:22px 0;overflow:hidden}
+  .marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite}
+  .marquee-track span{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,7vw,2.8rem);color:var(--ivory);font-weight:400;font-style:italic;
+    display:inline-flex;align-items:center;padding:0 28px}
+  .marquee-track span::after{content:"·";color:var(--gold);font-size:1em;margin-left:28px;font-style:normal}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------------- SERVICES ---------------- */
+  .services{background:var(--ivory-2)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .svc{position:relative;border-radius:2px;overflow:hidden;aspect-ratio:5/4}
+  .svc::after{content:attr(data-cap);position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+    font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,236,.5);
+    background:linear-gradient(135deg,#2a2520,#15110d)}
+  .svc img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1);filter:grayscale(.2) contrast(1.02)}
+  .svc:hover img{transform:scale(1.05);filter:grayscale(0) contrast(1.03)}
+  .svc-cap{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;
+    background:linear-gradient(to top,rgba(10,8,6,.85) 0%,rgba(10,8,6,.25) 48%,transparent 78%)}
+  .svc-cap h3{color:var(--ivory);font-size:1.8rem;font-weight:500}
+  .svc-cap p{color:rgba(245,242,236,.82);font-size:.84rem;margin-top:3px;max-width:34ch;font-weight:300}
+  .svc-cap .tag{align-self:flex-start;margin-bottom:auto;background:rgba(245,242,236,.1);backdrop-filter:blur(4px);
+    color:var(--ivory);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;padding:6px 12px;border-radius:0;border:1px solid rgba(245,242,236,.3)}
+
+  /* ---------------- SPACE / FEATURES ---------------- */
+  .space-media{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+  .space-media .shot{aspect-ratio:4/5}
+  .space h2{font-size:clamp(1.9rem,6.6vw,2.7rem);font-weight:500}
+  .feat-list{list-style:none;margin-top:24px}
+  .feat-list li{display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--line-soft);align-items:flex-start}
+  .feat-list li:last-child{border-bottom:1px solid var(--line-soft)}
+  .feat-list .fi{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .feat-list .fi svg{width:17px;height:17px}
+  .feat-list h4{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+  .feat-list p{font-size:.86rem;color:var(--muted)}
+
+  /* ---------------- REVIEWS ---------------- */
+  .reviews{background:var(--ink);color:var(--ivory)}
+  .reviews .eyebrow{color:var(--gold-2)}
+  .reviews .eyebrow::before{background:var(--gold-2)}
+  .reviews .italic{color:var(--gold-2)}
+  .reviews .num{color:var(--gold-2)}
+  .rev-head{margin-bottom:30px}
+  .rev-head h2{color:var(--ivory);font-size:clamp(2rem,7vw,3rem);font-weight:500}
+  .rev-score{display:inline-flex;align-items:center;gap:14px;margin-top:20px;background:rgba(245,242,236,.05);
+    border:1px solid rgba(184,148,104,.32);border-radius:2px;padding:11px 19px}
+  .rev-score b{font-family:"Cormorant Garamond",serif;font-size:1.9rem;color:var(--ivory);font-weight:600;line-height:1}
+  .rev-score .meta{font-size:.66rem;letter-spacing:.12em;color:rgba(245,242,236,.7);text-transform:uppercase}
+  .rev-score .stars{color:var(--gold-2);letter-spacing:2px;font-size:.82rem;display:block;margin-bottom:2px}
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .rev{position:relative;background:rgba(245,242,236,.04);border:1px solid rgba(245,242,236,.1);border-radius:2px;padding:30px 24px 24px;transition:border-color .3s,transform .3s}
+  .rev:hover{border-color:rgba(184,148,104,.5);transform:translateY(-3px)}
+  .rev .quote{position:absolute;top:10px;right:20px;font-family:"Cormorant Garamond",serif;font-size:4.5rem;color:var(--gold-2);opacity:.3;line-height:1}
+  .rev .stars{color:var(--gold-2);letter-spacing:3px;font-size:.9rem;margin-bottom:14px}
+  .rev p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.3rem;line-height:1.45;color:var(--ivory);font-weight:400}
+  .rev cite{display:block;margin-top:18px;font-style:normal;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2)}
+  .rev cite span{color:rgba(245,242,236,.55);letter-spacing:.05em;text-transform:none}
+
+  /* ---------------- VISIT / CONTACT ---------------- */
+  .visit h2{font-size:clamp(2rem,7vw,3rem);font-weight:500;margin-bottom:26px}
+  .findus{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:34px}
+  .map-frame{position:relative;border-radius:2px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--ivory-2)}
+  .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+  .findus-panel{display:flex;flex-direction:column;justify-content:center}
+  .info-rows{margin-bottom:24px}
+  .irow{display:grid;grid-template-columns:1fr;gap:3px;padding:17px 2px;border-bottom:1px solid var(--line-soft)}
+  .irow:first-child{border-top:1px solid var(--line-soft)}
+  .irow .k{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .irow .v{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--ink);font-weight:500;line-height:1.22;display:flex;flex-direction:column}
+  .irow .v small{font-family:"Jost";font-size:.8rem;color:var(--muted);font-weight:300;letter-spacing:0;margin-top:3px}
+  .contact-btns{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+  .cbtn{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:2px;padding:16px 14px;
+    background:var(--paper);color:var(--char);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+    transition:border-color .25s,transform .25s,background .25s,color .25s}
+  .cbtn:hover{border-color:var(--ink);background:var(--ink);color:var(--ivory);transform:translateY(-1px)}
+  .cbtn:hover svg{color:var(--ivory)}
+  .cbtn svg{width:18px;height:18px;flex:none;color:var(--gold);transition:color .25s}
+
+  /* ---------------- FOOTER ---------------- */
+  footer{padding:52px 0 30px;border-top:1px solid var(--line);background:var(--ivory-2)}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:34px}
+  .foot-brand{font-family:"Cormorant Garamond",serif;font-size:2.2rem;color:var(--ink);font-weight:600;letter-spacing:.04em;display:inline-flex;align-items:baseline;gap:8px}
+  .foot-brand i{font-style:italic;font-size:1.2rem;color:var(--gold);font-weight:500}
+  .foot-tag{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+  .foot-contact{list-style:none;margin:22px 0 18px}
+  .foot-contact li{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line-soft);font-size:.94rem;color:var(--char)}
+  .foot-contact li span{flex:none;width:58px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;padding-top:4px}
+  .foot-contact a:hover{color:var(--gold)}
+  .foot-social{display:flex;gap:10px}
+  .foot-social a{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:.25s}
+  .foot-social a:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+  .foot-social svg{width:18px;height:18px}
+
+  .foot-form{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:28px 24px}
+  .foot-form .ff-head{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--ink);margin-bottom:5px;font-weight:500}
+  .foot-form .ff-sub{font-size:.84rem;color:var(--muted);margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:500}
+  .field input,.field textarea{width:100%;background:var(--ivory);border:1px solid var(--line);
+    color:var(--ink);padding:13px 14px;border-radius:2px;font-family:"Jost";font-size:1rem;font-weight:300;outline:none;transition:.2s}
+  .field input::placeholder,.field textarea::placeholder{color:#aba294}
+  .field input:focus,.field textarea:focus{border-color:var(--gold);background:var(--paper)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .foot-form .btn-ink{width:100%;margin-top:6px}
+  .foot-form .note{font-size:.74rem;color:var(--muted);margin-top:14px;text-align:center}
+  .foot-form .note a{color:var(--gold)}
+
+  /* custom dropdown */
+  .cselect{position:relative}
+  .cselect-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;
+    background:var(--ivory);border:1px solid var(--line);color:var(--ink);padding:13px 14px;border-radius:2px;
+    font-family:"Jost";font-size:1rem;font-weight:300;text-align:left;transition:border-color .2s}
+  .cselect-btn svg{width:18px;height:18px;color:var(--gold);flex:none;transition:transform .25s}
+  .cselect.open .cselect-btn{border-color:var(--gold)}
+  .cselect.open .cselect-btn svg{transform:rotate(180deg)}
+  .cselect-list{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:40;background:var(--paper);
+    border:1px solid var(--line);border-radius:2px;padding:6px;list-style:none;box-shadow:0 18px 40px -20px rgba(26,22,19,.4);
+    max-height:0;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .2s,transform .2s,max-height .25s,visibility .2s}
+  .cselect.open .cselect-list{max-height:340px;opacity:1;visibility:visible;transform:none}
+  .cselect-list li{padding:12px;border-radius:2px;cursor:pointer;font-size:.94rem;color:var(--char);transition:background .15s}
+  .cselect-list li:hover{background:var(--ivory)}
+  .cselect-list li.sel{color:var(--gold);font-weight:400;background:rgba(156,122,77,.08)}
+  .foot-base{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:.74rem;color:var(--muted);text-align:center;letter-spacing:.03em}
+
+  /* ---------------- MOBILE CALL BAR ---------------- */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:1200;display:flex;background:rgba(245,242,236,.95);
+    backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:9px 14px;gap:10px}
+  .callbar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:2px;font-weight:500;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+  .callbar .c-call{background:var(--ink);color:var(--ivory)}
+  .callbar .c-mail{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .callbar svg{width:16px;height:16px}
+
+  /* ---------------- REVEAL ---------------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+  .rise{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .r1{animation-delay:.08s}.r2{animation-delay:.2s}.r3{animation-delay:.32s}.r4{animation-delay:.44s}.r5{animation-delay:.56s}
+
+  /* ================= DESKTOP ENHANCEMENTS ================= */
+  @media(min-width:760px){
+    body{font-size:17px;padding-bottom:0}
+    .callbar{display:none}
+    section{padding:104px 0}
+    .navlinks{display:flex;align-items:center;gap:34px}
+    .navlinks a.lnk{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;color:var(--ink);position:relative}
+    .navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .3s}
+    .navlinks a.lnk:hover::after{width:100%}
+    .navlinks .btn{padding:12px 22px;font-size:.68rem}
+    .burger,.menu{display:none}
+
+    header{padding:160px 0 76px}
+    .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+    .hero-actions{flex-direction:row}
+    .hero-actions .btn{width:auto}
+    .hero-card{left:-22px;right:auto;max-width:256px;bottom:32px}
+
+    .state-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:58px;align-items:center}
+    .state-media{margin-top:0}
+
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .svc{aspect-ratio:1/1}
+
+    .space-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+    .space-media{margin-bottom:0}
+    .space-media .shot:nth-child(2){margin-top:40px}
+
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .findus{grid-template-columns:1.1fr 1fr;gap:48px;align-items:stretch;margin-bottom:48px}
+    .map-frame{aspect-ratio:auto;min-height:470px}
+    .contact-btns{grid-template-columns:repeat(3,1fr)}
+    .irow{grid-template-columns:130px 1fr;align-items:baseline;gap:24px;padding:21px 2px}
+    .foot-grid{grid-template-columns:1.2fr .9fr;gap:62px;align-items:start}
+    .foot-form{align-self:start}
+  }
+  @media(min-width:1040px){
+    .svc-grid{grid-template-columns:repeat(4,1fr)}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}.rise{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- =============== NAV =============== -->
+<nav id="nav">
+  <a href="#top" class="brand">The <i>Villa</i></a>
+  <div class="navlinks">
+    <a href="#venue" class="lnk">The Venue</a>
+    <a href="#events" class="lnk">Events</a>
+    <a href="#space" class="lnk">The Space</a>
+    <a href="#visit" class="lnk">Visit</a>
+    <a href="tel:+96171845000" class="btn btn-ink">Enquire</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- =============== MOBILE MENU =============== -->
+<div class="menu" id="menu">
+  <a href="#venue" class="mlink">The Venue <span class="italic">01</span></a>
+  <a href="#events" class="mlink">Events <span class="italic">02</span></a>
+  <a href="#space" class="mlink">The Space <span class="italic">03</span></a>
+  <a href="#visit" class="mlink">Visit <span class="italic">05</span></a>
+  <div class="menu-foot">
+    <a href="tel:+96171845000" class="btn btn-ink">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>
+      Call 71 845 000
+    </a>
+    <span class="menu-meta">Open 24/7 · Dbayeh, Lebanon</span>
+    <span class="menu-meta">Main Road, Dbayeh — Mont-Liban</span>
+  </div>
+</div>
+
+<!-- =============== HERO =============== -->
+<header>
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <div class="eyebrow rise r1">Dbayeh · Mont-Liban · Lebanon</div>
+      <h1 class="rise r2">Not just a wedding. <span class="italic">A story.</span></h1>
+      <p class="lead rise r3">A luxury scenery and authentic vintage venue in Dbayeh — an ideal indoor setting and picturesque garden, a canvas for weddings, corporate and social events.</p>
+      <div class="hero-actions rise r4">
+        <a href="tel:+96171845000" class="btn btn-ink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>
+          Call 71 845 000
+        </a>
+        <a href="#space" class="btn btn-ghost">Explore the space</a>
+      </div>
+      <div class="hero-stats rise r5">
+        <div class="st"><b>4.7<span class="u">★</span></b><span>Facebook reviews</span></div>
+        <div class="st"><b>Vintage</b><span>Indoor &amp; garden</span></div>
+        <div class="st"><b>5.1k</b><span>On Instagram</span></div>
+        <div class="st"><b>24/7</b><span>Open daily</span></div>
+      </div>
+    </div>
+    <div class="hero-media rise r4">
+      <!-- HERO IMAGE · 4:5 · the grand hall -->
+      <figure class="shot framed" data-cap="Hero · the grand hall · 4:5">
+        <img src="thevilla_imgs/hero.webp" alt="The grand vintage hall at The Villa Venue, dressed for a wedding" onerror="this.remove()">
+      </figure>
+      <div class="hero-card">
+        <div class="stars">★★★★★</div>
+        <small>"A canvas for every love story."</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =============== STATEMENT =============== -->
+<section class="statement" id="venue">
+  <div class="wrap state-grid">
+    <div class="reveal">
+      <div class="sec-head"><span class="num">01</span><span class="eyebrow">The venue</span></div>
+      <h2>A luxury scenery and an <span class="italic">authentic vintage</span> concept — yours for the occasion.</h2>
+      <p>Set on the Main Road in Dbayeh, The Villa pairs a charming indoor hall framed by cascading chandeliers with a picturesque garden. Whether you dream of a starry-night atmosphere or a golden-glam celebration, the space is dressed to your story.</p>
+    </div>
+    <div class="state-media reveal d2">
+      <figure class="shot framed" data-cap="Vintage interior · 4:5">
+        <img src="thevilla_imgs/01-thevenue.webp" alt="Authentic vintage interior of The Villa Venue" onerror="this.remove()">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MARQUEE =============== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Weddings</span><span>Engagements</span><span>Corporate Events</span><span>Galas</span><span>Social Events</span><span>Celebrations</span>
+    <span>Weddings</span><span>Engagements</span><span>Corporate Events</span><span>Galas</span><span>Social Events</span><span>Celebrations</span>
+  </div>
+</div>
+
+<!-- =============== EVENTS / SERVICES =============== -->
+<section class="services" id="events">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">02</span><span class="eyebrow">What we host</span></div>
+    <div class="svc-grid">
+
+      <article class="svc reveal" data-cap="Weddings · 1:1">
+        <img src="thevilla_imgs/weddings.webp" alt="Wedding reception at The Villa Venue" onerror="this.remove()">
+        <div class="svc-cap"><span class="tag">Forever</span><h3>Weddings</h3><p>From intimate ceremonies to grand celebrations under the chandeliers.</p></div>
+      </article>
+
+      <article class="svc reveal d1" data-cap="Engagements · 1:1">
+        <img src="thevilla_imgs/engagements.webp" alt="Engagement party setting at The Villa Venue" onerror="this.remove()">
+        <div class="svc-cap"><span class="tag">The ask</span><h3>Engagements</h3><p>An elegant vintage backdrop for the moment it all begins.</p></div>
+      </article>
+
+      <article class="svc reveal d2" data-cap="Corporate · 1:1">
+        <img src="thevilla_imgs/corporate.webp" alt="Corporate event at The Villa Venue" onerror="this.remove()">
+        <div class="svc-cap"><span class="tag">Business</span><h3>Corporate Events</h3><p>Galas, launches and gatherings with a refined, memorable setting.</p></div>
+      </article>
+
+      <article class="svc reveal d3" data-cap="Social · 1:1">
+        <img src="thevilla_imgs/social.webp" alt="Social celebration at The Villa Venue" onerror="this.remove()">
+        <div class="svc-cap"><span class="tag">Occasions</span><h3>Social Events</h3><p>Birthdays, anniversaries and every celebration worth dressing up for.</p></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============== SPACE / FEATURES =============== -->
+<section class="space" id="space">
+  <div class="wrap space-grid">
+    <div class="space-media reveal">
+      <figure class="shot framed" data-cap="The grand hall · 4:5">
+        <img src="thevilla_imgs/03thespace00001.webp" alt="The grand vintage hall at The Villa Venue" onerror="this.remove()">
+      </figure>
+      <figure class="shot framed" data-cap="Garden setting · 4:5">
+        <img src="thevilla_imgs/03thespace00002.webp" alt="The picturesque garden at The Villa Venue" onerror="this.remove()">
+      </figure>
+    </div>
+    <div class="reveal d2">
+      <div class="sec-head"><span class="num">03</span><span class="eyebrow">The space</span></div>
+      <h2>Timeless interiors. <span class="italic">Endlessly yours.</span></h2>
+      <ul class="feat-list">
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M8 7h8l-2 5H10z"/><path d="M9 12v6M15 12v6M7 21h10"/></svg></span>
+          <div><h4>Grand vintage hall</h4><p>An authentic interior framed by cascading chandeliers and drapery.</p></div>
+        </li>
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c4-3 6-6 6-10a6 6 0 0 0-12 0c0 4 2 7 6 10z"/><path d="M12 12v10"/></svg></span>
+          <div><h4>Picturesque garden</h4><p>An open-air setting for ceremonies and golden-hour photographs.</p></div>
+        </li>
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 6L21 9l-5 4 2 7-6-4-6 4 2-7-5-4 6.5 0z"/></svg></span>
+          <div><h4>Bespoke décor &amp; lighting</h4><p>Styled to your theme — from starry-night ambience to golden glam.</p></div>
+        </li>
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="14" rx="1"/><path d="M4 10h16M9 5v14"/></svg></span>
+          <div><h4>Indoor &amp; outdoor flexibility</h4><p>One venue for every season, intimate or grand in scale.</p></div>
+        </li>
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
+          <div><h4>Central Dbayeh location</h4><p>On the Main Road in Dbayeh — minutes from Beirut.</p></div>
+        </li>
+        <li>
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><h4>Open 24/7</h4><p>Plan entirely around your schedule — we answer any time.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== REVIEWS =============== -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="rev-head reveal">
+      <div class="sec-head"><span class="num">04</span><span class="eyebrow">Kind words</span></div>
+      <h2>Loved by couples and <span class="italic">celebrated</span> by guests.</h2>
+      <div class="rev-score">
+        <span style="display:block"><span class="stars">★★★★★</span><span class="meta">4.7 Facebook · 4.0 Google · 128 reviews</span></span>
+        <b>4.7</b>
+      </div>
+    </div>
+    <!--
+      PLACEHOLDER REVIEWS — replace the quotes & names below with real
+      Google / Facebook reviews when you have them.
+    -->
+    <div class="rev-grid">
+      <blockquote class="rev reveal d1">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>A stunning vintage setting — the chandeliers and styling made our wedding feel like a dream.</p>
+        <cite>Guest review <span>· Facebook</span></cite>
+      </blockquote>
+      <blockquote class="rev reveal d2">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>Elegant, classy and beautifully decorated. The team turned our event into something unforgettable.</p>
+        <cite>Guest review <span>· Google</span></cite>
+      </blockquote>
+      <blockquote class="rev reveal d3">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>The perfect indoor venue for a luxury celebration. Gorgeous scenery and impeccable service.</p>
+        <cite>Guest review <span>· Facebook</span></cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- =============== VISIT / CONTACT =============== -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">05</span><span class="eyebrow">Visit &amp; enquire</span></div>
+    <h2 class="reveal" style="margin-bottom:30px">Let's plan your <span class="italic">occasion.</span></h2>
+
+    <div class="findus reveal">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=The+Villa+Venue+Dbayeh+Main+Road+Lebanon&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Map to The Villa Venue, Main Road, Dbayeh"></iframe>
+      </div>
+
+      <div class="findus-panel">
+        <div class="info-rows">
+          <div class="irow"><span class="k">Address</span><span class="v">Main Road, Dbayeh<small>Mont-Liban, Lebanon</small></span></div>
+          <div class="irow"><span class="k">Hours</span><span class="v">Open 24/7<small>Enquiries answered any time</small></span></div>
+          <div class="irow"><span class="k">Contact</span><span class="v">71 845 000<small>info@thevillavenue.com</small></span></div>
+        </div>
+
+        <div class="contact-btns">
+          <a class="cbtn" href="tel:+96171845000">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>Call
+          </a>
+          <a class="cbtn" href="mailto:info@thevillavenue.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email
+          </a>
+          <a class="cbtn" href="https://maps.app.goo.gl/NvUFbprRvyCN1kVG8" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Directions
+          </a>
+          <a class="cbtn" href="https://instagram.com/thevillavenue" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram
+          </a>
+          <a class="cbtn" href="https://www.facebook.com/thevillavenue/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.7.1 15.6 0 14.4 0 11.8 0 10 1.6 10 4.2V6H7v3h3v9h4z"/></svg>Facebook
+          </a>
+          <a class="cbtn" href="https://maps.app.goo.gl/NvUFbprRvyCN1kVG8" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.5 5.6L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.4z"/></svg>Reviews
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+
+      <div class="foot-intro reveal">
+        <div class="foot-brand">The <i>Villa</i></div>
+        <div class="foot-tag">Luxury vintage venue · indoor hall &amp; garden · weddings &amp; events</div>
+        <ul class="foot-contact">
+          <li><span>Where</span><a href="https://maps.app.goo.gl/NvUFbprRvyCN1kVG8" target="_blank" rel="noopener">Main Road, Dbayeh · Mont-Liban, Lebanon</a></li>
+          <li><span>Hours</span>Open 24/7</li>
+          <li><span>Phone</span><a href="tel:+96171845000">71 845 000</a></li>
+          <li><span>Email</span><a href="mailto:info@thevillavenue.com">info@thevillavenue.com</a></li>
+        </ul>
+        <div class="foot-social">
+          <a href="https://instagram.com/thevillavenue" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/thevillavenue/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.7.1 15.6 0 14.4 0 11.8 0 10 1.6 10 4.2V6H7v3h3v9h4z"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Enquiry → opens a pre-filled email -->
+      <form class="foot-form reveal d2" id="enquiryForm">
+        <div class="ff-head">Send an enquiry</div>
+        <div class="ff-sub">Tell us about your event — we'll be in touch shortly.</div>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Event</label>
+            <div class="cselect" id="typeSelect">
+              <button type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                <span class="cselect-val">Wedding</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <ul class="cselect-list" role="listbox">
+                <li role="option" data-val="Wedding" class="sel">Wedding</li>
+                <li role="option" data-val="Engagement">Engagement</li>
+                <li role="option" data-val="Corporate event">Corporate event</li>
+                <li role="option" data-val="Social event">Social event</li>
+                <li role="option" data-val="Gala / Celebration">Gala / Celebration</li>
+                <li role="option" data-val="Other">Other</li>
+              </ul>
+              <input type="hidden" name="type" value="Wedding">
+            </div>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date">
+          </div>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" rows="2" placeholder="Guests, timing, styling, questions…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-ink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Send enquiry
+        </button>
+        <div class="note">Or call <a href="tel:+96171845000">71 845 000</a> · open 24/7</div>
+      </form>
+
+    </div>
+    <div class="foot-base">
+      © <span id="yr"></span> The Villa Venue · Main Road, Dbayeh, Mont-Liban, Lebanon
+    </div>
+  </div>
+</footer>
+
+<!-- =============== MOBILE CALL BAR =============== -->
+<div class="callbar">
+  <a class="c-call" href="tel:+96171845000"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>Call</a>
+  <a class="c-mail" href="mailto:info@thevillavenue.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav bg on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // custom dropdown
+  const cs = document.getElementById('typeSelect');
+  if(cs){
+    const btn = cs.querySelector('.cselect-btn');
+    const valEl = cs.querySelector('.cselect-val');
+    const hidden = cs.querySelector('input[type=hidden]');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); cs.classList.toggle('open'); btn.setAttribute('aria-expanded', cs.classList.contains('open')); });
+    cs.querySelectorAll('.cselect-list li').forEach(li => {
+      li.addEventListener('click', () => {
+        cs.querySelectorAll('li').forEach(o => o.classList.remove('sel'));
+        li.classList.add('sel');
+        valEl.textContent = li.dataset.val;
+        hidden.value = li.dataset.val;
+        cs.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+      });
+    });
+    document.addEventListener('click', (e) => { if(!cs.contains(e.target)) cs.classList.remove('open'); });
+  }
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const toggleMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  burger.addEventListener('click', () => toggleMenu(!document.body.classList.contains('menu-open')));
+  document.querySelectorAll('#menu a.mlink, #menu .menu-foot a').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false)));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleMenu(false); });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // enquiry -> email
+  document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const body = [
+      'Hello The Villa Venue! I\'d like to enquire about an event.', '',
+      'Name: ' + (f.name.value || '—'),
+      'Event: ' + f.type.value,
+      'Date: ' + (f.date.value || 'flexible'),
+      f.msg.value.trim() ? 'Notes: ' + f.msg.value.trim() : ''
+    ].filter(Boolean).join('\n');
+    const subject = 'Event enquiry — ' + f.type.value;
+    window.location.href = 'mailto:info@thevillavenue.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
